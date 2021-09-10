@@ -1,17 +1,17 @@
 {% set name = "pygeoda" %}
-{% set version = "0.0.8.post1" %}
+{% set version = "0.0.8.post2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/GeoDaCenter/pygeoda/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aa76886136bb43cd1b3a2c26c4ac292c4b7f1e818eb55eaa84b0282b12037d6b
+  url: https://github.com/GeoDaCenter/pygeoda/archive/v{{ version }}.tar.gz
+  sha256: f4ab26c147b59089c595fe8625171b64a4165a517b44dfaa9608548ed4102e6c
 
 build:
   number: 0
-  skip: True  # [py<35]
+  skip: true  # [py<35]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -19,7 +19,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - pip 
+    - pip
   run:
     - python
 
@@ -32,7 +32,7 @@ about:
   license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
-  summary: "pygeoda is a python library for spatial data analysis"
+  summary: pygeoda is a python library for spatial data analysis
   description: |
     pygeoda is a python library for spatial data analysis based on libgeoda and GeoDa. 
     It provides spatial data analysis functionalities including Exploratory Spatial 
