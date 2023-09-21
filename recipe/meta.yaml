@@ -22,8 +22,10 @@ requirements:
   host:
     - python
     - pip 
+    - boost-cpp  # [win]
   run:
     - python
+    - boost-cpp  # [win]
 
 test:
   imports:
