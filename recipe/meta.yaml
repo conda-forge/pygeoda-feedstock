@@ -1,17 +1,17 @@
 {% set name = "pygeoda" %}
-{% set version = "0.0.8.post1" %}
+{% set version = "0.0.9-5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/GeoDaCenter/pygeoda/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aa76886136bb43cd1b3a2c26c4ac292c4b7f1e818eb55eaa84b0282b12037d6b
+  url: https://github.com/GeoDaCenter/pygeoda/archive/v{{ version }}.tar.gz
+  sha256: e2a8cc811371b5187836fc3159a4197085031059e0e4b3dfa1c00cad2ede6803
 
 build:
   number: 0
-  skip: True  # [py<35]
+  skip: true  # [py<35]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -19,9 +19,10 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
-    - pip 
+    - pip
   run:
     - python
 
