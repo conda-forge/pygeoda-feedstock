@@ -1,5 +1,5 @@
 {% set name = "pygeoda" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GeoDaCenter/pygeoda/archive/v{{ version }}.tar.gz
-  sha256: 9b56e60a2658c5caaa93665cab72d701c47263ca2cb6650e6437a377aaf38aa8
+  sha256: a054ec22a39bd093aee1049416d56a37fb8640167cd3d2b827870afee2a6500e
 
 build:
   number: 0
